@@ -15,14 +15,23 @@
         let inpWord = document.getElementById('inpWord').value;
         let arr1 = ['dog', 'cat', 'chicken', 'pig', 'bird'];
         let arr2 = ['con chó', 'con mèo', 'con gà', ' con lợn', 'con chim'];
-        for (let i = 0; i < arr1.length; i++) {
-            if (inpWord === arr1[i]) {
-                document.getElementById('displayR').innerHTML = ` "${inpWord}" trong tiếng Việt là "${arr2[i]}".`;
-                break
-            } else {
-                document.getElementById('displayR').innerHTML = ` "${inpWord}" không có trong từ điển này.`;
-            }
-        }
+        // Cách 1: Sử dụng For:
+        // for (let i = 0; i < arr1.length; i++) {
+        //     if (inpWord === arr1[i]) {
+        //         document.getElementById('displayR').innerHTML = ` "${inpWord}" trong tiếng Việt là "${arr2[i]}".`;
+        //         break
+        //     } else {
+        //         document.getElementById('displayR').innerHTML = ` "${inpWord}" không có trong từ điển này.`;
+        //     }
+        // }
+        // Cách 2: Sử dụng indexOf:
+           let index = arr1.indexOf(inpWord);
+           if (index!= -1){
+               document.getElementById('displayR').innerHTML = ` "${inpWord}" trong tiếng Việt là "${arr2[index]}".`;
+           }
+           else {
+               document.getElementById('displayR').innerHTML = ` "${inpWord}" không có trong từ điển này.`;
+           }
     }
 </script>
 </body>
