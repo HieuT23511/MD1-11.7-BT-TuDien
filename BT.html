@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai tap Tu dien</title>
+</head>
+<body>
+<input type="text" placeholder="Enter the words " id="inpWord">
+<br>
+<br>
+<button type="button" onclick="dictionary()">Dict</button>
+<h4 id="displayR"></h4>
+<script>
+    function dictionary() {
+        let inpWord = document.getElementById('inpWord').value;
+        let arr1 = ['dog', 'cat', 'chicken', 'pig', 'bird'];
+        let arr2 = ['con chó', 'con mèo', 'con gà', ' con lợn', 'con chim'];
+        for (let i = 0; i < arr1.length; i++) {
+            if (inpWord === arr1[i]) {
+                document.getElementById('displayR').innerHTML = ` "${inpWord}" trong tiếng Việt là "${arr2[i]}".`;
+                break
+            } else {
+                document.getElementById('displayR').innerHTML = ` "${inpWord}" không có trong từ điển này.`;
+            }
+        }
+    }
+</script>
+</body>
+</html>
